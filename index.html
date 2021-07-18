@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+
+  <title>Title page</title>
+
+  <link href="./main.css" rel="stylesheet">
+
+
+  <script type="text/javascript">
+
+    function renderImagesNow() {
+      const bucketBasePath = "http://www.ramalingapuram.com.s3-website.ap-south-1.amazonaws.com/images/";
+      const mainDiv = document.getElementById("mainDiv");
+
+      for (let i = 1; i < 4; i++) {
+        const divRowNode = document.createElement("div");
+        divRowNode.setAttribute("class", "row");
+        const divItemNode = document.createElement("div");
+        divItemNode.setAttribute("class", "col-md-4");
+        const pNode = document.createElement("p");
+        pNode.innerText = "";
+        const h5Node = document.createElement("h5");
+        h5Node.innerText = "Issue-"+i;
+
+        const imgNode = document.createElement("img");
+        imgNode.setAttribute("class", "img-responsive");
+        const imageName = bucketBasePath + "image-" + i + ".jpg";
+        imgNode.src = imageName;
+        imgNode.setAttribute("alt", "");
+        imgNode.height = "400";
+        imgNode.width = "300";
+        divItemNode.appendChild(h5Node);
+        divItemNode.appendChild(imgNode);
+        divItemNode.appendChild(pNode);
+
+        divRowNode.appendChild(divItemNode);
+        mainDiv.appendChild(divRowNode);
+      }
+    }
+  </script>
+
+</head>
+
+<body class="" onload="renderImagesNow()">
+
+  <main class="content-wrapper">
+    <header class="white-text-container section-container">
+      <div class="text-center">
+
+      </div>
+    </header>
+
+
+
+    <!-- Add your site or app content here -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+
+
+          <div class="card">
+            <div class="card-block" id="mainDiv">
+              <h2>Issues</h2>
+              <!--
+            <div class="row">
+              <div class="col-md-4">
+                <h3 class="h5"></h3>
+                <img src="./assets/images/img-02.jpg" class="img-responsive" alt="">
+                <p>Test</p>
+              </div>
+              </div>
+            -->
+
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        scrollRevelation('.card');
+      });
+  </script>
+  <script type="text/javascript" src="./main.js"></script>
+
+</body>
+
+</html>
